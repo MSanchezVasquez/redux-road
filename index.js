@@ -59,6 +59,12 @@ const wagonReducer = (state = initialWagonState, action) => {
         cash: state.cash - 15,
       };
     }
+    case "theft": {
+      return {
+        ...state,
+        cash: Math.floor(state.cash / 2), // Halve the cash due to theft
+      };
+    }
     default: {
       return state; // Return the current state for unhandled actions
     }

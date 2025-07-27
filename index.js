@@ -48,6 +48,17 @@ const wagonReducer = (state = initialWagonState, action) => {
         cash: state.cash + 5,
       };
     }
+    case "buy": {
+      const canBuy = state.cash >= 15;
+      if (!canBuy) {
+        return state; // Prevent buying if not enough cash
+      }
+      return {
+        ...state,
+        supplies: state.supplies + 25,
+        cash: state.cash - 15,
+      };
+    }
     default: {
       return state; // Return the current state for unhandled actions
     }
@@ -79,4 +90,7 @@ wagon = wagonReducer(wagon, { type: "sell" }); // Simulate selling supplies
 console.log(wagon);
 
 wagon = wagonReducer(wagon, { type: "sell" }); // Simulate selling supplies
+console.log(wagon);
+
+wagon = wagonReducer(wagon, { type: "buy" }); // Simulate buying supplies
 console.log(wagon);

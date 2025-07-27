@@ -3,3 +3,5 @@ const initialWagonState = {
   distance: 0,
   days: 0,
 };
+
+const wagonReducer = (state = initialWagonState, action) => {};

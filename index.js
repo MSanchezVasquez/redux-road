@@ -37,6 +37,17 @@ const wagonReducer = (state = initialWagonState, action) => {
         days: state.days + 1,
       };
     }
+    case "sell": {
+      const canSell = state.supplies >= 20;
+      if (!canSell) {
+        return state; // Prevent selling if not enough supplies
+      }
+      return {
+        ...state,
+        supplies: state.supplies - 20,
+        cash: state.cash + 5,
+      };
+    }
     default: {
       return state; // Return the current state for unhandled actions
     }
@@ -59,4 +70,13 @@ wagon = wagonReducer(wagon, { type: "travel", payload: 3 }); // Simulate traveli
 console.log(wagon);
 
 wagon = wagonReducer(wagon, { type: "travel", payload: 3 }); // Simulate traveling for 3 more days
+console.log(wagon);
+
+wagon = wagonReducer(wagon, { type: "gather" }); // Simulate gathering supplies again
+console.log(wagon);
+
+wagon = wagonReducer(wagon, { type: "sell" }); // Simulate selling supplies
+console.log(wagon);
+
+wagon = wagonReducer(wagon, { type: "sell" }); // Simulate selling supplies
 console.log(wagon);

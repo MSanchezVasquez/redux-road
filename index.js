@@ -39,5 +39,7 @@ const wagonReducer = (state = initialWagonState, action) => {
 };
 
 let wagon = wagonReducer(undefined, {}); // Initialize the wagon state
+console.log(wagon);
 
+wagon = wagonReducer(wagon, { type: "travel", payload: 1 }); // Simulate traveling for 1 day
 console.log(wagon);

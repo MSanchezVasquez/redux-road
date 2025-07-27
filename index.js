@@ -49,3 +49,6 @@ console.log(wagon);
 
 wagon = wagonReducer(wagon, { type: "tippedWagon" }); // Simulate a tipped wagon
 console.log(wagon);
+
+wagon = wagonReducer(wagon, { type: "travel", payload: 3 }); // Simulate traveling for 3 more days
+console.log(wagon);

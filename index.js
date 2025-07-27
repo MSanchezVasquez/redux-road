@@ -6,4 +6,10 @@ const initialWagonState = {
 };
 
 // Redux reducer function to manage the wagon's state
-const wagonReducer = (state = initialWagonState, action) => {};
+const wagonReducer = (state = initialWagonState, action) => {
+  switch (action.type) {
+    default: {
+      return state; // Return the current state for unhandled actions
+    }
+  }
+};

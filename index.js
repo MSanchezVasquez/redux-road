@@ -46,3 +46,6 @@ console.log(wagon);
 
 wagon = wagonReducer(wagon, { type: "gather" }); // Simulate gathering supplies
 console.log(wagon);
+
+wagon = wagonReducer(wagon, { type: "tippedWagon" }); // Simulate a tipped wagon
+console.log(wagon);

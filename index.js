@@ -100,3 +100,8 @@ console.log(wagon);
 
 wagon = wagonReducer(wagon, { type: "buy" }); // Simulate buying supplies
 console.log(wagon);
+
+wagon = wagonReducer(wagon, { type: "theft" }); // Simulate theft
+console.log(wagon);
+wagon = wagonReducer(wagon, { type: "theft" }); // Simulate theft
+console.log(wagon);

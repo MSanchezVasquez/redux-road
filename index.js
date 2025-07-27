@@ -16,6 +16,15 @@ const wagonReducer = (state = initialWagonState, action) => {
         days: state.days + 1,
       };
     }
+    case "travel": {
+      const days = action.payload;
+      return {
+        ...state,
+        supplies: state.supplies - 20 * days,
+        distance: state.distance + 10 * days,
+        days: state.days + days,
+      };
+    }
     default: {
       return state; // Return the current state for unhandled actions
     }

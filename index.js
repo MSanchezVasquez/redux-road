@@ -3,6 +3,7 @@ const initialWagonState = {
   supplies: 100,
   distance: 0,
   days: 0,
+  cash: 200,
 };
 
 // Redux reducer function to manage the wagon's state

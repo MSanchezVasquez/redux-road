@@ -43,3 +43,6 @@ console.log(wagon);
 
 wagon = wagonReducer(wagon, { type: "travel", payload: 1 }); // Simulate traveling for 1 day
 console.log(wagon);
+
+wagon = wagonReducer(wagon, { type: "gather" }); // Simulate gathering supplies
+console.log(wagon);

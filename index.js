@@ -37,3 +37,7 @@ const wagonReducer = (state = initialWagonState, action) => {
     }
   }
 };
+
+let wagon = wagonReducer(undefined, {}); // Initialize the wagon state
+
+console.log(wagon);

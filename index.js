@@ -25,6 +25,13 @@ const wagonReducer = (state = initialWagonState, action) => {
         days: state.days + days,
       };
     }
+    case "tippedWagon": {
+      return {
+        ...state,
+        supplies: state.supplies - 30,
+        days: state.days + 1,
+      };
+    }
     default: {
       return state; // Return the current state for unhandled actions
     }
